@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.userTable {
+  width: 100%;
+}
+.table {
+  width: 100%;
+}
+.table-row {
+  display: table;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+.table-parent {
+  display: none;
+}
+.table-child {
+  display: none;
+}
+.table-false {
+  display: none;
+}
+.table-true {
+  display: block;
+}
