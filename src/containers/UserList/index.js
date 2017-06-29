@@ -1,21 +1,24 @@
 import React, { Component, PropTypes} from 'react';
-import { Table, Collapse } from 'react-bootstrap';
 
 class UserList extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      openDetail: false
+      openDetail: false,
+      openMessage: 'Open'
     }
   }
 
   parentUserToggle (item, index) {
-    this.setState({openDetail: !this.state.openDetail})
+    this.setState({
+      openDetail: !this.state.openDetail,
+      openMessage: 'Close'
+    })
   }
 
   render() {
-    const { userProfile, index, key, removeUser } = this.props;
+    const { userProfile, index } = this.props;
     let parentUserItem = null;
     if (userProfile.children instanceof Object) {
       parentUserItem = userProfile.children.map((children, index) => {
@@ -24,20 +27,22 @@ class UserList extends Component {
     }
     return (
       <div className="table-row" key={index}>
-        <div className="col-md-2">
+        <div className="col-md-1">
           {
             userProfile.children ?
             <button
+              className="btn btn-primary"
               onClick={this.parentUserToggle.bind(this, userProfile.children)}
-            > Open </button>
+            > {this.state.openMessage} </button>
             : null
           }
         </div>
-        <div className="col-md-2">{userProfile.Name}</div>
-        <div className="col-md-2">{userProfile.City}</div>
-        <div className="col-md-2">{userProfile.Phone}</div>
+        <div className="col-md-3">{userProfile.Name}</div>
+        <div className="col-md-3">{userProfile.City}</div>
+        <div className="col-md-3">{userProfile.Phone}</div>
         <div className="col-md-2">
           <button
+            className="btn btn-danger"
             onClick={this.props.removeUser}
           > Remove User </button>
         </div>

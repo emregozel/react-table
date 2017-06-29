@@ -35,10 +35,10 @@ class App extends Component {
             <div className="col-md-12">
               <div className="table">
                 <div className="table-head">
-                  <div className="col-md-2">#</div>
-                  <div className="col-md-2">Name</div>
-                  <div className="col-md-2">City</div>
-                  <div className="col-md-2">Phone</div>
+                  <div className="col-md-1">#</div>
+                  <div className="col-md-3">Name</div>
+                  <div className="col-md-3">City</div>
+                  <div className="col-md-3">Phone</div>
                   <div className="col-md-2">Delete</div>
                 </div>
                 <div className="table-body">

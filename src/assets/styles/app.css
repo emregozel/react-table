@@ -1,0 +1,22 @@
+.table {
+  width: 100%; }
+  .table .table-head {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 30px 0;
+    display: table;
+    width: 100%; }
+  .table .table-row {
+    display: table;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid #ddd; }
+  .table .table-parent,
+  .table .table-child,
+  .table .table-false {
+    display: none; }
+  .table .table-true {
+    display: block;
+    margin-top: 45px; }
+    .table .table-true .table-row {
+      background-color: #f5f5f5; }
