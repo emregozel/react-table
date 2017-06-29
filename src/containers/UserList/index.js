@@ -31,7 +31,9 @@ class UserList extends Component {
             <button
               className="btn btn-primary"
               onClick={this.parentUserToggle.bind(this, userProfile.children)}
-            > {this.state.openMessage ? 'CLOSE' : 'OPEN'} </button>
+            >
+              { !this.state.openDetail ? 'OPEN' : 'CLOSE' }
+            </button>
             : null
           }
         </div>
