@@ -21,9 +21,12 @@ class App extends Component {
     });
   }
 
-  userDeleteToggle (index) {
+  userDeleteToggle (id) {
     const { userData } = this.state;
-    userData.splice(index);
+    delete userData[id];
+    this.setState({
+      userData
+    })
   }
 
   render() {
@@ -49,7 +52,7 @@ class App extends Component {
                           key={key}
                           index={index}
                           userProfile={userData[key]}
-                          removeUser={this.userDeleteToggle.bind(this, index)}
+                          removeUser={this.userDeleteToggle.bind(this, key)}
                         />
                       );
                     })
