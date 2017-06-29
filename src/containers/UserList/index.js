@@ -1,21 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 import { Table, Collapse } from 'react-bootstrap';
 
-const styles = {
-  propContainer: {
-    width: 200,
-    overflow: 'hidden',
-    margin: '20px auto 0',
-  },
-  propToggleHeader: {
-    margin: '20px auto 10px',
-  },
-};
-
 class UserList extends Component {
-  state = {
-    height: '100%',
-  };
 
   constructor(props) {
     super(props);
