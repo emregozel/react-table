@@ -5,15 +5,13 @@ class UserList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openDetail: false,
-      openMessage: 'Open'
+      openDetail: false
     }
   }
 
   parentUserToggle (item, index) {
     this.setState({
-      openDetail: !this.state.openDetail,
-      openMessage: 'Close'
+      openDetail: !this.state.openDetail
     })
   }
 
@@ -33,7 +31,7 @@ class UserList extends Component {
             <button
               className="btn btn-primary"
               onClick={this.parentUserToggle.bind(this, userProfile.children)}
-            > {this.state.openMessage} </button>
+            > {this.state.openMessage ? 'CLOSE' : 'OPEN'} </button>
             : null
           }
         </div>

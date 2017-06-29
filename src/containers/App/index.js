@@ -22,8 +22,8 @@ class App extends Component {
   }
 
   userDeleteToggle (index) {
-    const { userData } = this.state;
-    userData.splice(index);
+    const userData = this.state.userData;
+    delete userData[index];
   }
 
   render() {
