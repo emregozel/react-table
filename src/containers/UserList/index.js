@@ -16,7 +16,7 @@ class UserList extends Component {
   }
 
   render() {
-    const { userProfile, index } = this.props;
+    const { userProfile, index, removeUser } = this.props;
     let parentUserItem = null;
     if (userProfile.children instanceof Object) {
       parentUserItem = userProfile.children.map((children, index) => {
@@ -41,10 +41,15 @@ class UserList extends Component {
         <div className="col-md-3">{userProfile.City}</div>
         <div className="col-md-3">{userProfile.Phone}</div>
         <div className="col-md-2">
-          <button
-            className="btn btn-danger"
-            onClick={this.props.removeUser}
-          > Remove User </button>
+          {
+            this.props.removeUser ?
+            <button
+              className="btn btn-danger"
+              onClick={this.props.removeUser}
+            > Remove User </button>
+            : null
+          }
+
         </div>
         <div className={this.state.openDetail ? 'table-true' : 'table-false'}>
           {
